@@ -23,16 +23,12 @@
         <%= f.label "Leave a comment" %>
         <%= f.text_area :body, rows: 5, class: 'span4' %>
       </div>
-      <%= f.submit "Add comment", class:"btn btn-primary" %>
+      <%= f.submit "Add comment", class:"btn btn-primary" %> 
    <% end %>
   </p>
 <% end %>
 
-<h5>Comments:</h5>
+<h5>Comments:</h5> 
 <% @post.comments.each do |comment| %>
-  <div class='well span8'>
-    <em>"<%= comment.body %>"</em><br/>
-    <small>
-    by <%= link_to comment.creator.username, '' %> at <%= comment.created_at.strftime('%R') %> on <%= display_datetime(comment.created_at) %>.</small>
-  </div>
+   <%= render 'comments/comment', comment: comment %>
 <% end %>
