@@ -19,7 +19,7 @@ before_action :require_same_user, only: [:edit, :update]
   end
 
   def show
-    
+   
   end
 
   def edit; end
